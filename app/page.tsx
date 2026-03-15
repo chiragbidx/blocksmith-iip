@@ -13,8 +13,6 @@ import { LayoutTestimonialSection } from "../components/home/LayoutTestimonialSe
 import { Navbar as LayoutNavbar } from "@/components/layout/navbar";
 
 export default function Home() {
-  // Simple toggles so agents/users can hide sections without touching JSX.
-  // Use ONLY_SECTIONS (comma list) to whitelist, or HIDE_SECTIONS to blacklist.
   const only = (process.env.ONLY_SECTIONS ?? "")
     .split(",")
     .map((s) => s.trim().toLowerCase())
@@ -49,49 +47,6 @@ export default function Home() {
       <main className="flex min-h-screen w-full flex-col gap-12 px-6 py-12 sm:px-10 lg:px-16 lg:max-w-[1600px] lg:mx-auto">
         {visibleSections.map(([, node]) => node)}
       </main>
-
-      {/* lightweight animations defined locally to avoid tailwind config changes */}
-      <style>{`
-        @keyframes float {
-          0% { transform: translateY(0px); }
-          50% { transform: translateY(-8px); }
-          100% { transform: translateY(0px); }
-        }
-        @keyframes fade-slide {
-          0% { opacity: 0; transform: translateY(10px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes marquee {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-section {
-          animation: fade-slide 0.7s ease both;
-        }
-        .animate-float {
-          animation: float 6s ease-in-out infinite;
-        }
-        .animate-float-slow {
-          animation: float 14s ease-in-out infinite;
-        }
-        .animate-fade-slide {
-          animation: fade-slide 0.6s ease both;
-        }
-        .animate-marquee {
-          width: max-content;
-          animation: marquee 24s linear infinite;
-        }
-        .hover-lift {
-          transition: transform 300ms ease, box-shadow 300ms ease;
-        }
-        .hover-lift:hover {
-          transform: translateY(-6px);
-          box-shadow: 0 20px 40px -24px rgba(251, 114, 50, 0.45);
-        }
-        .dark .home-dark .hover-lift:hover {
-          box-shadow: 0 18px 44px -26px rgba(0, 0, 0, 0.75);
-        }
-      `}</style>
     </div>
   );
 }
