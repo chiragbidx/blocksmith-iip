@@ -1,5 +1,8 @@
-import { pgTable, text, timestamp, uniqueIndex } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp, uniqueIndex, integer } from "drizzle-orm/pg-core";
 import { sql } from "drizzle-orm";
+
+// -- Existing tables omitted for brevity --
+// ... users, teams, teamMembers, teamInvitations (leave unchanged)
 
 export const users = pgTable("users", {
   id: text("id")
@@ -73,6 +76,33 @@ export const teamInvitations = pgTable("team_invitations", {
   status: text("status").notNull().default("pending"),
   expiresAt: timestamp("expires_at", { withTimezone: true }).notNull(),
   createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+});
+
+// --- NEW: Campaigns Table ---
+// Table used to persist marketing campaigns per team/user in the Mailvibe app
+
+export const campaigns = pgTable("campaigns", {
+  id: text("id")
+    .notNull()
+    .default(sql`gen_random_uuid()`)
+    .primaryKey(),
+  userId: text("user_id")
+    .notNull()
+    .references(() => users.id, { onDelete: "cascade" }),
+  teamId: text("team_id")
+    .notNull()
+    .references(() => teams.id, { onDelete: "cascade" }),
+  subject: text("subject").notNull(),
+  content: text("content").notNull(),
+  recipients: text("recipients").notNull(), // comma-separated emails
+  status: text("status").notNull().default("draft"), // draft, sent, failed
+  sentAt: timestamp("sent_at", { withTimezone: true }),
+  createdAt: timestamp("created_at", { withTimezone: true })
+    .notNull()
+    .defaultNow(),
+  updatedAt: timestamp("updated_at", { withTimezone: true })
     .notNull()
     .defaultNow(),
 });
