@@ -13,30 +13,30 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is Panda free to start with?",
-    answer: "Yes. You can start with the core template and customize it for your product.",
+    question: "Is Mailvibe really ready for production email marketing?",
+    answer: "Yes! Mailvibe sends real emails via SendGrid and stores your campaigns in a secure, scalable database.",
     value: "item-1",
   },
   {
-    question: "Can I use this for a production SaaS app?",
+    question: "How do I send a campaign?",
     answer:
-      "Yes. The starter is designed for production-minded teams with scalable structure and reusable UI patterns.",
+      "Just create a campaign in the dashboard, fill in your recipient emails, and hit 'Send'. Each recipient gets a real email.",
     value: "item-2",
   },
   {
-    question: "Does it support dark mode and responsive design?",
+    question: "Does Mailvibe support analytics and tracking?",
     answer:
-      "Yes. The template includes theme support and responsive layouts across major sections.",
+      "Campaign analytics is coming soon! For now, you can track sent time and delivery status. Open/bounce tracking will be added.",
     value: "item-3",
   },
   {
-    question: "Can I plug in my own auth and billing provider?",
-    answer: "Yes. The structure is provider-agnostic and easy to adapt for your stack.",
+    question: "Is there a free plan?",
+    answer: "Yes. The Starter plan lets you send up to 200 emails/month at no cost. Upgrade any time for more volume.",
     value: "item-4",
   },
   {
-    question: "How quickly can I launch with Panda?",
-    answer: "Most teams can ship an MVP in days by reusing existing sections and starter patterns.",
+    question: "Who is behind Mailvibe?",
+    answer: "Mailvibe was built by Chirag Dodiya. Contact Chirag at hi@chirag.co for partnership, support, or suggestions.",
     value: "item-5",
   },
 ];
