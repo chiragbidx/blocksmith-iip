@@ -10,40 +10,40 @@ interface FeaturesProps {
 
 const featureList: FeaturesProps[] = [
   {
-    icon: "TabletSmartphone",
-    title: "Responsive By Default",
+    icon: "Mail",
+    title: "Send Campaigns Instantly",
     description:
-      "Every section is optimized for mobile and desktop without extra layout work.",
+      "Launch emails to your whole audience — or hand-picked segments — with a simple workflow.",
   },
   {
-    icon: "BadgeCheck",
-    title: "Battle-Tested Patterns",
+    icon: "BarChart2",
+    title: "Analytics (Coming Soon)",
     description:
-      "Uses dependable UI and architecture conventions teams can maintain long-term.",
+      "Monitor deliveries, opens, and engagement with upcoming campaign stats and dashboards.",
   },
   {
-    icon: "Goal",
-    title: "Product-Focused Structure",
+    icon: "UserPlus2",
+    title: "Organize Recipients Easily",
     description:
-      "Clear section hierarchy designed to communicate value and drive activation.",
+      "Input a comma-separated list of emails now, import CSV and full subscriber management soon.",
   },
   {
-    icon: "PictureInPicture",
-    title: "Polished Visual Foundation",
+    icon: "ShieldCheck",
+    title: "Security by Default",
     description:
-      "Modern cards, spacing, and motion cues that are easy to extend for your brand.",
+      "GDPR, CAN-SPAM, and deliverability essentials — built on trusted platforms, privacy-first.",
   },
   {
-    icon: "MousePointerClick",
-    title: "Conversion-Ready CTA Flow",
+    icon: "Sparkle",
+    title: "Beautiful & Fast",
     description:
-      "Strategic calls-to-action and section order help users move to signup quickly.",
+      "Slick, responsive UI with optimized workflows designed to get your campaign out on time.",
   },
   {
-    icon: "Newspaper",
-    title: "Documentation-Friendly",
+    icon: "Rocket",
+    title: "Ready For Growth",
     description:
-      "Readable code and section boundaries make onboarding new contributors easier.",
+      "Built with scale in mind using Postgres, Drizzle ORM, and world-class Next.js technology.",
   },
 ];
 
@@ -55,12 +55,11 @@ export const LayoutFeatureGridSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        What you get out of the box
+        Everything You Need to Ship Campaigns
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
-        Panda combines developer speed and production-grade UX so you can spend
-        your time shipping features instead of rebuilding starter infrastructure.
+        Mailvibe is the fastest way to design, launch, and track your marketing — right from your own dashboard.
       </h3>
 
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
