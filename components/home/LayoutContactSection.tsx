@@ -43,7 +43,7 @@ export const LayoutContactSection = () => {
       firstName: "",
       lastName: "",
       email: "",
-      subject: "Starter Demo",
+      subject: "Mailvibe Inquiry",
       message: "",
     },
   });
@@ -52,7 +52,7 @@ export const LayoutContactSection = () => {
     const { firstName, lastName, email, subject, message } = values;
     console.log(values);
 
-    const mailToLink = `mailto:hello@panda.dev?subject=${subject}&body=Hello, I am ${firstName} ${lastName}. My email is ${email}. %0D%0A${message}`;
+    const mailToLink = `mailto:hi@chirag.co?subject=${encodeURIComponent(subject)}&body=Hello, I am ${firstName} ${lastName}. My email is ${email}.%0D%0A${encodeURIComponent(message)}`;
 
     window.location.assign(mailToLink);
   }
@@ -66,11 +66,10 @@ export const LayoutContactSection = () => {
               Contact
             </h2>
 
-            <h2 className="text-3xl md:text-4xl font-bold">Talk to the Panda team</h2>
+            <h2 className="text-3xl md:text-4xl font-bold">Talk to Mailvibe</h2>
           </div>
           <p className="mb-8 text-muted-foreground lg:w-5/6">
-            Need help customizing the starter, planning architecture, or
-            accelerating launch? Share your goals and timeline.
+            Need support, have marketing questions, or curious how to get more from Mailvibe? Send your message below or email Chirag (Owner) directly.
           </p>
 
           <div className="flex flex-col gap-4">
@@ -79,8 +78,7 @@ export const LayoutContactSection = () => {
                 <Building2 />
                 <div className="font-bold">Find us</div>
               </div>
-
-              <div>Remote-first • San Francisco, CA</div>
+              <div>Fully remote (India/US timezone)</div>
             </div>
 
             <div>
@@ -89,7 +87,7 @@ export const LayoutContactSection = () => {
                 <div className="font-bold">Call us</div>
               </div>
 
-              <div>+1 (415) 555-0199</div>
+              <div>(Contact via email first)</div>
             </div>
 
             <div>
@@ -98,18 +96,18 @@ export const LayoutContactSection = () => {
                 <div className="font-bold">Email us</div>
               </div>
 
-              <div>hello@panda.dev</div>
+              <div>hi@chirag.co</div>
             </div>
 
             <div>
               <div className="flex gap-2">
                 <Clock />
-                <div className="font-bold">Visit us</div>
+                <div className="font-bold">Business Hours</div>
               </div>
 
               <div>
                 <div>Monday - Friday</div>
-                <div>9AM - 6PM PT</div>
+                <div>9AM - 6PM IST / PT</div>
               </div>
             </div>
           </div>
@@ -131,7 +129,7 @@ export const LayoutContactSection = () => {
                       <FormItem className="w-full">
                         <FormLabel>First Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Leopoldo" {...field} />
+                          <Input placeholder="Chirag" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -144,7 +142,7 @@ export const LayoutContactSection = () => {
                       <FormItem className="w-full">
                         <FormLabel>Last Name</FormLabel>
                         <FormControl>
-                          <Input placeholder="Miranda" {...field} />
+                          <Input placeholder="Dodiya" {...field} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -189,16 +187,15 @@ export const LayoutContactSection = () => {
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="Starter Demo">
-                              Starter Demo
+                            <SelectItem value="Mailvibe Inquiry">
+                              Mailvibe Inquiry
                             </SelectItem>
-                            <SelectItem value="Architecture Review">
-                              Architecture Review
+                            <SelectItem value="Campaign Support">
+                              Campaign Support
                             </SelectItem>
-                            <SelectItem value="Design System">
-                              Design System
+                            <SelectItem value="Feature Request">
+                              Feature Request
                             </SelectItem>
-                            <SelectItem value="Billing Integration">Billing Integration</SelectItem>
                             <SelectItem value="Enterprise Plan">
                               Enterprise Plan
                             </SelectItem>
@@ -220,7 +217,7 @@ export const LayoutContactSection = () => {
                         <FormControl>
                           <Textarea
                             rows={5}
-                            placeholder="Tell us about your SaaS idea, stage, and timeline..."
+                            placeholder="Describe your marketing goal or campaign needs..."
                             className="resize-none"
                             {...field}
                           />
