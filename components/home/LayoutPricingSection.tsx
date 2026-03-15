@@ -29,29 +29,29 @@ const plans: PlanProps[] = [
     popular: 0,
     price: 0,
     description:
-      "Ideal for prototypes and small internal tools.",
+      "Try Mailvibe for free. Great for MVPs and micro-startups.",
     buttonText: "Start for free",
     benefitList: [
-      "Up to 3 teammates",
-      "Basic auth patterns",
-      "Core landing sections",
-      "Community support",
-      "Deploy-ready setup",
+      "Send up to 200 emails/month",
+      "Real campaign sending",
+      "All dashboard features",
+      "Email support",
+      "Self-serve onboarding",
     ],
   },
   {
     title: "Growth",
     popular: 1,
-    price: 49,
+    price: 39,
     description:
-      "Best for product teams shipping customer-facing SaaS.",
+      "For founders and teams scaling up campaign volume.",
     buttonText: "Start trial",
     benefitList: [
-      "Unlimited teammates",
-      "Advanced section set",
-      "Billing-ready models",
+      "Unlimited emails*",
+      "Advanced recipient management (soon)",
+      "Deliverability tools",
       "Priority support",
-      "Team workflows",
+      "Early analytics access",
     ],
   },
   {
@@ -59,14 +59,14 @@ const plans: PlanProps[] = [
     popular: 0,
     price: 199,
     description:
-      "For teams requiring compliance, support SLAs, and custom rollout.",
+      "For scale-ups that need compliance, advanced integrations and SLAs.",
     buttonText: "Contact sales",
     benefitList: [
-      "Security review support",
-      "SSO/SAML integration path",
-      "Dedicated onboarding",
-      "Phone and email support",
-      "Architecture advisory",
+      "White glove onboarding",
+      "SSO/SAML (beta)",
+      "Deliverability / IP warming",
+      "Custom integration support",
+      "Phone/email support from Chirag",
     ],
   },
 ];
@@ -79,11 +79,11 @@ export const LayoutPricingSection = () => {
       </h2>
 
       <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Pricing for every stage
+        Just pay for what you need
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-        Start lean, then scale to enterprise-grade workflows as your product grows.
+        Mailvibe is free for early adopters. Scale with us as you grow. <span className="text-muted-foreground/60 text-sm">*</span> Unlimited plan subject to fair use policy.
       </h3>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
